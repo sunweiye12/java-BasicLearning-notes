@@ -1,0 +1,80 @@
+正则表达式的应用::::::
+	字符串的方法boolea matches(String regex) 
+例如   
+	 string regex = "正则表达式"
+	"string".matches(regex)
+	告知此字符串是否匹配给定的正则表达式
+
+
+[]单个字符类
+	* [abc]      	a、b 或 c（简单类） 
+	* [^abc]    	任何字符，除了 a、b 或 c（否定） 
+	* [a-zA-Z] 		a到 z 或 A到 Z，两头的字母包括在内（范围） 
+	* [0-9] 		0到9的字符都包括
+	* [a-d[m-p]]	a 到 d 或 m 到 p：[a-dm-p]（并集）
+      [a-z&&[def]]	 d、e 或 f（交集）
+	  [a-z&&[^bc]]	 a 到 z，除了 b 和 c：[ad-z]（减去）
+	  [a-z&&[^m-p]]	 a 到 z，而非 m 到 p：[a-lq-z]（减去）
+	  
+预定义字符(单个字符)
+	    .	任何一个字符（与行结束符可能匹配也可能不匹配）
+		\\d	数字：[0-9]
+		\\D	非数字： [^0-9]
+		\\s	空白字符：[ \t\n\x0B\f\r]
+		\\S	非空白字符：[^\s]
+		\\w	单词字符：[a-zA-Z_0-9]
+		\\W	非单词字符：[^\w]
+
+Greedy 数量词 
+	* X?  		X，一次或一次也没有(一次是指X中的内容最多出现1次)(没有是指""空)
+	* X*  		X，零次到多次
+	* X+  		X，一次到多次
+	* X{n} 		X， 恰好 n 次 
+	* X{n,} 	X，至少 n 次 
+	* X{n,m} 	X，至少 n 次，但是不超过 m次 (以上都可以利用这个来实现)
+	
+	----------------------------------------------
+* 正则表达式的分割功能
+	* String类的功能：public String[] split(String regex)
+	-------------------------------------------------
+* 正则表达式的替换功能
+	* String类的功能：public String replaceAll(String regex,String replacement)
+	------------------------------------------------
+	正则表达式的分组功能
+	* 捕获组可以通过从左到右计算其开括号来编号。
+	例如，在表达式 ((A)(B(C))) 中，存在四个这样的组： 
+* 
+		1     ((A)(B(C))) 
+		2     (A 
+		3     (B(C)) 
+		4     (C) 
+	
+		组零始终代表整个表达式。	
+例子			
+public static void main(String[] args) {
+		//a();
+		b();
+	}
+	private static void b() {
+		String s ="我现在用的手机号是:17801020179,我原来用的手机号是15732028636.";
+		
+		String regex = "1[3578]\\d{9}";           		 	//得到手机号的正则表达式
+		Pattern p =Pattern.compile(regex);    	  			//将正则表达式转换成一种模式
+		Matcher m = p.matcher(s);				  			//将上模式存到匹配器中,并在匹配器中存入目标字符串
+		while (m.find()) {                           		//利用循环,输出所有匹配项   
+				//find函数有指针作用,在寻找到一个目标后下次寻找时会忽略已经寻找的目标
+			System.out.println(m.group());		
+		}
+	}
+	private static void a() {
+		String str = "我我....我...我我.要...要要...要学....学学..学.编..编编.编.程.程.程..程";
+		String regex = "\\.+";       					//    	. 必须用\\.来表示           +表示一个或多个
+		String s1 = str.replaceAll(regex, "");   		//		将所有的. 用空字符替代(即删除所有的.)
+		System.out.println(s1);
+		String s2 = s1.replaceAll("(.)\\1+", "$1");   	//   	(.)\\1+ 代表任意字符出现了一次到多次    $1代表第一组中的数据
+		System.out.println(s2);
+	}
+		
+		
+		
+		

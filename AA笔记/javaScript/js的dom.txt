@@ -1,0 +1,93 @@
+js的dom
+	1、理解一下文档对象模型
+		html文件加载到内存之后会形成一颗dom树，根据这些节点对象可以进行脚本代码的动态修改
+		在dom树当中 一切皆为节点对象
+	2、dom方法和属性
+1.getElementById() 
+       寻找一个有着给定 id 属性值的元素，返回值是一个有着给定 id 属性值的元素节点。如果不存在这样的元素，它返回 null.
+	var oElement = document.getElementById ( sID )
+
+2.getElementsByName()
+	寻找有着给定name属性的所有元素，这个方法将返回一个节点集合，这个集合可以当作一个数组来处理。这个集合的 length 
+	属性等于当前文档里有着给定name属性的所有元素的总个数。
+
+3.getElementsByTagName()
+	寻找有着给定标签名的所有元素，这个方法将返回一个节点集合，这个集合可以当作一个数组来处理。
+	这个集合的 length 属性等于当前文档里有着给定标签名的所有元素的总个数。
+	   var elements = document.getElementsByTagName(tagName);
+	   var elements = element.getElementsByTagName(tagName);
+	该方法不必非得用在整个文档上。它也可以用来在某个特定元素的子节点当中寻找有着给定标签名的元素。
+	   var container =   document.getElementById(“sid”);
+	   var elements = container.getElementsByTagName(“p”);
+	   alert(elements .length);
+
+4.hasChildNodes()	
+	该方法用来检查一个元素是否有子节点，返回值是 true 或 false.
+	  var booleanValue = element.hasChildNodes();
+	文本节点和属性节点不可能再包含任何子节点，所以对这两类节点使用 hasChildNodes 方法的返回值永远是 false.
+	如果 hasChildNodes 方法的返回值是 false，则 childNodes,firstChild,lastChild 将是空数组和空字符串
+5.文档里的每个节点都有以下属性。
+	nodeName:一个字符串，其内容是给定节点的名字。
+		  var name = node.nodeName;
+		   * 如果节点是元素节点，nodeName返回这个元素的名称
+		   * 如果是属性节点，nodeName返回这个属性的名称
+		   * 如果是文本节点，nodeName返回一个内容为#text的字符串
+	   
+	nodeType：返回一个整数，这个数值代表着给定节点的类型。 nodeType 属性返回的整数值对应着 12 种节点类型,常用的有三种：
+		Node.ELEMENT_NODE    ---1    -- 元素节点
+		Node.ATTRIBUTE_NODE  ---2    -- 属性节点
+		Node.TEXT_NODE       ---3    -- 文本节点
+		nodeType 是个只读属性
+	
+	nodeValue：返回给定节点的当前值（字符串）
+		 如果给定节点是一个元素节点，返回值是 null
+		 如果给定节点是一个属性节点，返回值是这个属性的值。
+		 如果给定节点是一个文本节点，返回值是这个文本节点的内容。
+		nodeValue 是一个 读/写 属性，但不能对元素节点的 nodeValue 属性设置值，
+		但可以为文本节点的 nodeValue 属性设置一个值。
+	
+6.replaceChild()		**替换元素
+	把一个给定父元素里的一个子节点替换为另外一个子节点
+		var reference = element.replaceChild(newChild,oldChild);
+	返回值是一个指向已被替换的那个子节点的引用指针。
+7.getAttribute() 	**获得属性  
+	返回一个给定元素的一个给定属性节点的值
+		var attributeValue = element.getAttribute(attributeName);
+	给定属性的名字必须以字符串的形式传递给该方法。
+	给定属性的值将以字符串的形式返回，如果给定属性不存在，getAttribute() 将返回一个空字符串.
+8.setAttribute()      **修改属性
+	将给定元素节点添加一个新的属性值或改变它的现有属性的值。
+	   element.setAttribute(attributeName,attributeValue);
+	属性的名字和值必须以字符串的形式传递给此方法
+	如果这个属性已经存在，它的值将被刷新；
+	如果不存在，setAttribute()方法将先创建它再为其赋值。
+9.createElement()
+	按照给定的标签名创建一个新的元素节点。方法只有一个参数：将被创建的元素的名字，是一个字符串.
+	  var reference = document.createElement(element);   (参数为标签名)  可以通过上面的方法给这个元素添加属性
+	方法的返回值：是一个指向新建节点的引用指针。返回值是一个元素节点，所以它的 nodeType 属性值等于 1。
+createTextNode()
+	创建一个包含着给定文本的新文本节点。这个方法的返回值是一个指向新建文本节点引用指针。
+		var textNode = document.createTextNode(text);  (传入文本字符串)
+appendChild()
+		为给定元素增加一个子节点：                                   
+		   var newreference = element.appendChild(newChild).              
+		 给定子节点 newChild将成为给定元素节点 element 的最后一个子节点。
+
+10.insertBefore()
+	把一个给定节点插入到一个给定元素节点的给定子节点的前面
+	  var reference =  element.insertBefore(newNode,targetNode);
+	  节点 newNode 将被插入到元素节点 element 中并出现在节点 targetNode 的前面.
+	  节点 targetNode 必须是 element 元素的一个子节点。
+11.removeChild()
+	从一个给定元素里删除一个子节点
+	   var reference = element.removeChild(node);   (两个参数都用id表示)
+12.innerHTML
+	浏览器几乎都支持该属性，但不是 DOM 标准的组成部分。
+	innerHTML 属性可以用来读，写某给定元素里的 HTML内容。 (可以读取HTML内容)
+	
+	<div id="city"></div>
+	 var divElement=document.getElementById("city");
+	 divElement.innerHTML="<li value='beijing^'' id='beijing'>北京</li>";
+	
+13.
+		 

@@ -1,0 +1,31 @@
+* A:修饰符：
+	* 权限修饰符：private，默认的，protected，public
+	* 状态修饰符：static，final
+	* 抽象修饰符：abstract
+* B:类：
+	* 权限修饰符：默认修饰符，public
+	* 状态修饰符：final
+	* 抽象修饰符：abstract
+	* 用的最多的就是：public
+	
+* C:成员变量：
+	* 权限修饰符：private，默认的，protected，public
+	* 状态修饰符：static，final
+	* 用的最多的就是：private
+	
+* D:构造方法：
+	* 权限修饰符：private，默认的，protected，public
+	* 用的最多的就是：public
+	**********************************************************************************
+* E:成员方法：
+	* 权限修饰符：private(只能在本类中使用修饰内容)，默认的，protected，public
+	* 状态修饰符：static(用于直接类名点调用)，final(子类不可以重写)
+	* 抽象修饰符：abstract(用于子类重写此方法)(修饰类的话用于重写此类中的所有的抽象方法,接口所有的方法都重写)
+	* 用的最多的就是：public
+	
+* F:除此以外的组合规则：
+	* 成员变量：public static final
+	* 成员方法：
+		* public static 
+	    * public abstract
+		* public final

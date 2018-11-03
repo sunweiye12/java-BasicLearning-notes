@@ -1,0 +1,10 @@
+*****在集合中contains和remove方法底层应用的是equals方法,
+因此在运用到引用数据类型时应该重写equals方法
+
+public boolean equals(Object obj) {	
+	Person p = (Person)obj;
+	return this.name.equals(p.name) && this.age == p.age;  //字符串用equals方法比较 
+}
+
+
+

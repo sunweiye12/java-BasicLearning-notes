@@ -1,0 +1,23 @@
+Java 和 JavaScript 是两门不同的编程语言。 
+	 一般认为，当时 Netscape 之所以将 LiveScript 命名为 JavaScript，是因为 Java 是当时最流行的编程语言，
+	 带有 "Java" 的名字有助于这门新生语言的传播。         
+ 它们的相同之处包括：       
+	 它们的语法和 C 语言都很相似；
+	 它们都是面向对象的（虽然实现的方式略有不同）；
+	 JavaScript 在设计时参照了 Java 的命名规则；   
+ 它们的不同之处包括：       
+	 JavaScript 是动态类型语言，而 Java 是静态类型语言；
+	 JavaScript 是弱类型的，Java 属于强类型；
+	 JavaScript 的面向对象是基于原型的（prototype-based）实现的，Java 是基于类（class-based）的； 
+	 JavaScript 除了长得和 Java 比较像之外，语言风格相去甚远。JavaScript 在设计时所参考的对象不包括 Java，
+	 而包括了像 Self 和 Scheme 这样的语言。
+
+ 1、js是什么
+	js是可以嵌入到html中，是 基于对象 和 事件驱动 的 脚本语言
+	特点：
+		(1)交互性
+		(2)安全性：js不能访问本地磁盘
+		(3)跨平台：浏览器中都具备js解析器
+2、js能做什么
+	(1)js能动态的修改(增删)html和css的代码
+	(2)能动态的校验数据

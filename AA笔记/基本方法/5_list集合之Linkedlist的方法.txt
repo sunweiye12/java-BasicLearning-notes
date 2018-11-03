@@ -1,0 +1,7 @@
+
+
+ B:LinkedList类特有功能
+	* public void addFirst(E e)及addLast(E e)
+	* public E getFirst()及getLast()
+	* public E removeFirst()及public E removeLast()
+	* public E get(int index);

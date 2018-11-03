@@ -1,0 +1,18 @@
+ A:Arrays类(因为是工具类因此都是抽象方法,类名点调用)
+	* 针对数组进行操作的工具类。
+	* 提供了排序，查找等功能。
+* B:成员方法
+	* public static String toString(int[] arr)   将数组转换成字符串的方法 Arrays.toString(arr)
+	
+	* public static void sort(int[] arr)        将数组排序      Arrays.sort(arr); 
+	            
+	* public static int binarySearch(int[] a,int key)
+	   对有序的数组进行元素定位 Arrays.binarySearch(arr, 22);返回位置
+	   如果不包含该元素则返回负的插入点减一
+	* asList(T... a) Arrays中的静态方法,将数组转换为结合(数组必须为引用数据类型)
+	
+	list li = Arrays.asList(arr) //将arr数组转换为集合li   (注意泛型的使用)
+	          返回一个受指定数组支持的固定大小的列表。
+	1.数组转换成集合不可以增加或减少元素,但可以使用集合的其它方法
+	2.基本数据类型的数组转换成集合,会将整个数组当作一个对象转换
+	因此在打印基本类型的数组时,将其基本类型转换时为其包装类

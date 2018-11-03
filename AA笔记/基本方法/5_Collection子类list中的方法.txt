@@ -1,0 +1,6 @@
+
+List集合的特有功能概述
+  	void add(int index,E element)     //在指定位置添加元素
+	* E remove(int index)			//在指定位置删除元素
+	* E get(int index)				//得到指定位置元素
+	* E set(int index,E element)    //修改指定位置的元素

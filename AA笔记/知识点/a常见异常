@@ -1,0 +1,7 @@
+1.ArrayIndexOutOfBoundsException:数组索引越界异常
+		* 原因：你访问了不存在的索引。
+2.:NullPointerException:空指针异常
+		* 原因：数组已经不在指向堆内存了。而你还用数组名去访问元素。
+3.ClassCastException: 类型转换异常
+
+4.ConcurrentModificationException: 并发修改异常(在遍历集合的同时修改集合的长度会出现这样的错误)

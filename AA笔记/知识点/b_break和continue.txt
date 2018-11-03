@@ -1,0 +1,21 @@
+
+*******break只能在switch和循环中,用于跳出循环和switch语句
+
+
+*******continue只能在循环中 ,结束此次循环继续下次循环
+
+一般都配合if语句使用
+a: for(int x=1; x<=10; x++) {    //标号注明指定循环
+		if(x == 3) {
+			break a;
+		}
+		System.out.println(“Java基础班”);
+}
+
+
+for(int x=1; x<=10; x++) {
+		if(x == 3) {
+			continue;
+		}
+		System.out.println(“Java基础班”);
+}

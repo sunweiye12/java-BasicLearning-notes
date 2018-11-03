@@ -1,0 +1,1 @@
+LinkedHashSet是HashSet的子类集合,它的底层是链表结构实现的,因此可以保证怎么存怎么取(set中唯一一个)

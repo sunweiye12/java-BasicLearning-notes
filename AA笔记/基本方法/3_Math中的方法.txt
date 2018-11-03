@@ -1,0 +1,17 @@
+
+
+  A:Math类概述
+	* Math 类包含用于执行基本数学运算的方法，如初等指数、对数、平方根和三角函数。 
+* B:成员方法
+	* public static int abs(int a) 			 		//取绝对值
+	* public static int round(float a)   			//得到四舍五入的整数
+	* public static double ceil(double a)	 		//向上取整 得到double值
+	* public static double floor(double a)	  		//向下取整 得到double值
+	* public static int max(int a,int b) min自学		//获取大值
+	* public static double pow(double a,double b)	//获取a的b次方 得到double值
+	* public static double random()					//得到[0.0  1.0)的小数
+	* public static double sqrt(double a)			//对a开平方
+	* 
+	* 静态方法直接Math.调用   例如Math.random();  为得到[0.0  1.0)的小数
+	* 
+	

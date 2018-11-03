@@ -1,0 +1,17 @@
+set和list集合类都继承Collection接口
+区别是它无索引,不可以储存相同的元素,而且存取数据顺序不同(除LinkedHashSet)
+
+HashSet是Set的子类
+在引用数据类型的时候,为了保重元素的唯一,要重写equals方法和hashCode方法,
+因为返回的hashCode的值相同才会调用equals方法,equals方法返回true证明是一个对象则不存储
+直接Alt Shift+s自动生成equals和hashCode方法
+
+* 1.HashSet原理
+	* 我们使用Set集合都是需要去掉重复元素的, 如果在存储的时候逐个equals()比较, 效率较低,哈希算法提高了去重复的效率, 降低了使用equals()方法的次数
+	* 当HashSet调用add()方法存储对象的时候, 先调用对象的hashCode()方法得到一个哈希值, 然后在集合中查找是否有哈希值相同的对象
+		* 如果没有哈希值相同的对象就直接存入集合
+		* 如果有哈希值相同的对象, 就和哈希值相同的对象逐个进行equals()比较,比较结果为false就存入, true则不存
+* 2.将自定义类的对象存入HashSet去重复
+	* 类中必须重写hashCode()和equals()方法
+	* hashCode(): 属性相同的对象返回值必须相同, 属性不同的返回值尽量不同(提高效率)
+	* equals(): 属性相同返回true, 属性不同返回false,返回false的时候存储

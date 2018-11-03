@@ -1,0 +1,25 @@
+System的概述
+
+	* A:System类的概述
+	* System 类包含一些有用的类字段和方法。它不能被实例化。 
+ 	B:成员方法
+	* public static void gc()					//系统垃圾回收器();
+	* public static void exit(int status)		//退出java虚拟机();
+	* public static long currentTimeMillis()   	//计算程序的运行时间
+	* pubiic static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length) //复制数组
+	* 
+	* src - 源数组。                                                     		(被复制的数组)
+		srcPos - 源数组中的起始位置。
+		dest - 目标数组。                                            (复制到此数组)
+		destPos - 目标数据中的起始位置。
+		length - 要复制的数组元素的数量。
+	 *
+	 
+	 
+	 	long start = System.currentTimeMillis();
+		for (int i = 0; i < 5000; i++) {
+			System.out.print("星星");
+		}
+		long end = System.currentTimeMillis();
+		System.out.println("-----------------");
+		System.out.println(end - start);   //获取上面程序的运行时间(毫秒单位)

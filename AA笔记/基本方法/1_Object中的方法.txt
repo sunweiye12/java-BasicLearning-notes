@@ -1,0 +1,32 @@
+
+1.hashCode()方法	
+	* public int hashCode()
+	* a:返回该对象的哈希码值(int值)。默认情况下，该方法会根据对象的地址来计算。
+	* b:不同对象的，hashCode()一般来说不会相同。但是，同一个对象的hashCode()值肯定相同。
+	
+2.getClass()方法
+	* public final Class getClass()
+	* a:返回此对象的运行时类(Class类型)。  返回字节码文件
+	* b:可以通过Class类的一个方法，获取对象的真实类的全名称。	
+		* public String getName()	
+3.toString()方法
+	* public String toString()
+	* a:返回该对象的字符串表示。
+	* b:它的初试值等于： 
+		public Stirng toString() {
+			* getClass().getName() + "@" + Integer.toHexString(hashCode()) 
+		}
+	* c:由于默认情况下的数据对我们来说没有意义，一般建议重写该方法。**(直接打印对象的引用会默认调用toString方法)
+		public Stirng toString() {
+			return name + "," + age;
+		}	
+
+4.equals()方法   (比较不同对象的属性值	)
+	* a:指示其他某个对象是否与此对象“相等”。 (返回为boolean类型)
+	* b:默认情况下比较的是对象的引用是否相同。
+	* c:由于比较对象的引用没有意义，一般建议重写该方法。使其可以比较不同对象的属性值	
+		public boolean equals(Object obj) {
+			Student s = (Student)obj;        //要记得向下转型
+			return this.name.equals(s.name) && this.age.equals(s.age);
+		}	
+	

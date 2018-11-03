@@ -1,0 +1,28 @@
+ 
+Collection属于接口类 因此不可以实例化 可以通过父类引用指向子类对象的方法
+ 	Collection c = new ArrayList<Object>();  //父类引用指向子类对象(ArrayList是它的间接子类)
+**基本功能
+		boolean add(E e) 			添加元素
+		boolean remove(Object o)  	移除元素
+		void clear()				清空集合
+		boolean contains(Object o)  //判断是否包含o
+		boolean isEmpty()			判断是否为空
+		int size()					//获取元素的个数
+**带All的功能演示	
+		boolean addAll(Collection c)		//在原来数组上添加集合c的所有元素
+		boolean removeAll(Collection c)      //删除的是集合的交集
+		boolean containsAll(Collection c)	 //在原来数组是否包含c集合
+		boolean retainAll(Collection c)      //取交集合  (调用的集合只要发生改变就是true)
+**迭代器的实用  集合遍历
+		Iterator ite = c.iterator();            //获取一个迭代器用于 遍历集合
+	    while (ite.hasNext()) {                 //判断集合中是否存在元素(具有指针效应)
+	    	Person p = (Person)ite.next();		//强转
+	    	System.out.println(p);     //获取该元素并打印
+	    }
+**集合转换成数组
+		Object[] arr = c.toArray();     //将集合c转换成一个object类型的数组(如果集合中都是统一类型元素,则转换的数组类型也可以转换为此类型)
+**B:注意:
+		collectionXxx.java使用了未经检查或不安全的操作.
+		注意:要了解详细信息,请使用 -Xlint:unchecked重新编译.
+		java编译器认为该程序存在安全隐患
+		温馨提示:这不是编译失败,所以先不用理会,等学了泛型你就知道了

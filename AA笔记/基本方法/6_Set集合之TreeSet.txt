@@ -1,0 +1,16 @@
+TreeSet是Set的子类集合,它的底层是二叉树结构实现的,可以用来对集合元素进行排序,也可以保证元素唯一
+
+TreeSet比较是通过compareTo方法比较排序的,因此在自定义类时需要实现comparable接口 重写compareTo方法(此接口只有一个方法)
+
+public int compareTo(Person o) {
+	return 0 ;                
+}
+
+当compareTo方法返回0的时候集合中只有一个元素
+当compareTo方法返回正数的时候集合中怎么存怎么取
+当compareTo方法返回负数的时候集合倒序存储
+
+public int compareTo(Person o) { 
+	int num = this.age - o.age; //按照年龄排序
+	return num ==0 ? this.name.compareTo(o.name):num;   //年龄是比较的主要条件,姓名是次要条件
+}
